@@ -95,7 +95,9 @@ section { padding-left: .5em;
 #flow { display: block; }
 h2 { margin: 0; }	
 
-main{background-color: white;}
+main{
+	background-color: white;
+}
 
 section { padding-left: .5em;
         padding-right: .5em;
