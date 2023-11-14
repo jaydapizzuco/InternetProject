@@ -14,7 +14,7 @@ header {background-color: #8e8eca;
         background-size: 100% 100%;*/
 		margin-top: 50px;
 		font-size: 90%;
-		min-height: 200px;}
+		min-height: 200px;} 
 
 header a { text-decoration: none; }
 header a:link { color: #FFF; }
@@ -88,9 +88,29 @@ img {float: right;
 h2 { margin: 0; }
 
 section { padding-left: .5em;
-        padding-right: .5em; }
+        padding-right: .5em;
+		margin: 5px; }
 
 #flow { display: block; }
+h2 { margin: 0; }	
+
+main{
+	background-color: white;
+}
+section { padding-left: .5em;
+        padding-right: .5em;
+		
+		margin: 5px; }
+
+#flow { display: block;
+		}
+
+#contact{
+	display: block;
+	border: solid black 1px;
+	padding:20px;
+}
+
 
 form { display: flex;
       flex-flow: column nowrap; }
