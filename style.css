@@ -71,7 +71,7 @@ footer {position: fixed;
 		background-color: white;
 		font-family: 'Courier New';}
 
-.button {background-color: #04AA6D; /* Green */
+.button {background-color: #04AA6D;
 		border: none;
 		color: white;
 		padding: 15px 32px;
@@ -79,7 +79,8 @@ footer {position: fixed;
 		text-align: center;
 		text-decoration: none;
 		display: inline-block;
-		font-size: 16px;}
+		font-size: 16px;
+		font-family:'Courier New';}
 
 img {float: right;
 	border: 1px solid black;
@@ -94,9 +95,8 @@ section { padding-left: .5em;
 #flow { display: block; }
 h2 { margin: 0; }	
 
-main{
-	background-color: white;
-}
+main{background-color: white;}
+
 section { padding-left: .5em;
         padding-right: .5em;
 		
@@ -156,4 +156,5 @@ input, datalist, textarea { margin-bottom: .5em; }
 				   padding-left: 8em; }
 		#wrapper { width: 80%; margin: auto; }
 }
+
 		  
