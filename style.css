@@ -58,10 +58,25 @@ footer { font-size: small;
 	   font-style: italic; 
 	   clear: right; }
 
-h2 { margin: 0; }		  
+h2 { margin: 0; }	
+
+main{
+	background-color: white;
+}
 section { padding-left: .5em;
-        padding-right: .5em; }
-#flow { display: block; }
+        padding-right: .5em;
+		
+		margin: 5px; }
+
+#flow { display: block;
+		}
+
+#contact{
+	display: block;
+	border: solid black 1px;
+	padding:20px;
+}
+
 
 form { display: flex;
       flex-flow: column nowrap; }
