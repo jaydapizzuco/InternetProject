@@ -6,7 +6,8 @@ body { background-color: #8e8eca;
 	   margin: 0;}
 
 #wrapper {background-color: #F5F5F5;
-		padding: 2em; }
+		padding: 2em; 
+		text-align: center;}
 
 header {background-color: #8e8eca;      
         color: #FFF;
@@ -160,3 +161,35 @@ input, datalist, textarea { margin-bottom: .5em; }
 }
 
 		  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+form { display: flex;
+	flex-direction: column;
+	width: 80%;
+	max-width: 40em;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;}

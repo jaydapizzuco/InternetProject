@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Eveyrthing Store</title>
+<title>Everything Store</title>
 <link href="style.css" rel="stylesheet">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,3 +15,65 @@
   <li><a href="about.html">About</a></li>
 </ul>
 </nav>
+<div id = "wrapper">
+<main>
+  <h1>Subtotal Amount <b> <p id = "subtotal"></p></b></h1>
+
+  <form>
+    <label> <b>Contact Information</b></label>
+  <input type="text" name="email" id="email" required="required" placeholder="Email">
+  <br>
+
+  <label><b>Shipping</b></label>
+  <input type="text" name="fname" id="fname" required="required" placeholder="First Name"><input type="text" name="lname" id="lname" required="required" placeholder="Last Name">
+  <input type="text" name="address" id="address" required="required" placeholder="Street Address"> 
+  <input type="text" name="postalCode" id="postal" required="required" placeholder="Postal Code">  <input type="text" name="city" id="city" required="required" placeholder="City">
+  <input type="text" name="province" id="province" required="required" placeholder="Province" list="provinces">
+  
+  <datalist id="provinces">
+    <option>Alberta</option>
+    <option>British Columbia</option>
+    <option>Manitoba</option>
+    <option>New Brunswick</option>
+    <option>Newfoundland and Labrador</option>
+    <option>Northwest Territories</option>
+    <option>Nova Scotia</option>
+    <option>Nunavut</option>
+    <option>Ontario</option>
+    <option>Prince Edward Island</option>
+    <option>Quebec</option>
+    <option>Saskatchewan</option>
+    <option>Yukon</option>
+    </datalist>
+
+  </form>
+  <br>
+  <input type="radio" id="shipToAddress" name="shippingOptions" value="shipToAddress">
+    <label for="shipToAddress">Ship to Address</label><br>
+    <input type="radio" id="expressShipping" name="shippingOptions" value="expressShipping">
+    <label for="expressShipping">Express Shipping to Address</label><br>
+    <input type="radio" id="shipToStore" name="shippingOptions" value="shipToStore">
+    <label for="shipToStore">Ship to Store</label>
+
+  <form>
+    <br>
+    <label><b>Payment Information</b></label>
+    <input type="text" name="cardName" id="cardName" required="required" placeholder="Name on Card">
+    <input type="number" name="cardNumber" id="cardNumber" required="required" placeholder="Card Number"> 
+    <input type="text" name="expirationDate" id="expirationDate" required="required" placeholder="MM/YY">  
+    <input type="number" name="cvc" id="province" required="required" placeholder="CVC">
+  </form>
+
+  <section>
+    <h2>Subtotal  $<p id = "subtotal"></p> </h2>
+    <h2>Shipping Cost  $<p id = "shippingCost"></p> </h2>
+    <h2>Taxes  $<p id = "taxes"></p> </h2>
+    <h1>Total  $<p id = "total"></p> </h1>
+ 
+  <button class ="button" id ="pay" value="pay" style="margin-left: 0em;">Pay</button>
+
+</section>
+</main>
+</body>
+</div>
+</html>
