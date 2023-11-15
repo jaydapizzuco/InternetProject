@@ -82,9 +82,12 @@ footer {position: fixed;
 		font-size: 16px;
 		font-family:'Courier New';}
 
+.imgButton{text-align:center;}
+
 img {float: right;
 	border: 1px solid black;
-	padding-right: 10%;}
+	padding-right: 10%;
+	margin: 1em;}
 
 h2 { margin: 0; }
 
@@ -101,17 +104,13 @@ main{
 
 section { padding-left: .5em;
         padding-right: .5em;
-		
 		margin: 5px; }
 
-#flow { display: block;
-		}
+#flow { display: block; }
 
-#contact{
-	display: block;
+#contact{display: block;
 	border: solid black 1px;
-	padding:20px;
-}
+	padding:20px;}
 
 
 form { display: flex;
@@ -125,6 +124,11 @@ input, datalist, textarea { margin-bottom: .5em; }
 	justify-content: space-around; }
 
 .zoom:hover{transform: scale(1.5);}
+
+div {width: auto;
+    height: auto;
+    padding: 10px;
+    margin: 0;}
 
 @media (min-width: 600px) {		  
 		nav ul { display: flex;
