@@ -130,6 +130,14 @@ div {width: auto;
     padding: 10px;
     margin: 0;}
 
+.header img {float: left;
+		width: 100px;
+		height: 100px;}
+	  
+.header h1 {position: relative;
+			top: 18px;
+			left: 10px;}
+
 @media (min-width: 600px) {		  
 		nav ul { display: flex;
 		       flex-flow: row nowrap;
