@@ -14,7 +14,8 @@ header {background-color: #8e8eca;
         background-size: 100% 100%;*/
 		margin-top: 50px;
 		font-size: 90%;
-		min-height: 200px;} 
+		height: fit-content;
+		/*min-height: 200px;*/} 
 
 header a { text-decoration: none; }
 header a:link { color: #FFF; }
@@ -25,7 +26,7 @@ h2 {text-align: center;
 	font-family: 'Courier New';
 	font-size: large;}
 
-.home { height: 20vh;
+.home { height: fit-content;
        padding-top: 2em;
 	   padding-left: 10%;}
 
@@ -80,16 +81,17 @@ footer {position: fixed;
 		text-decoration: none;
 		display: inline-block;
 		font-size: 16px;
-		font-family:'Courier New';}
-
-.imgButton{text-align:center;}
+		font-family:'Courier New';
+		width: 160px;
+		height: 40px}
 
 img {float: right;
 	border: 1px solid black;
 	padding-right: 10%;
 	margin: 1em;}
 
-h2 { margin: 0; }
+h2 { margin: 0; 
+	font-size: 50px;}
 
 section { padding-left: .5em;
         padding-right: .5em;
@@ -98,9 +100,7 @@ section { padding-left: .5em;
 #flow { display: block; }
 h2 { margin: 0; }	
 
-main{
-	background-color: white;
-}
+main{background-color: white;}
 
 section { padding-left: .5em;
         padding-right: .5em;
@@ -154,7 +154,7 @@ div {width: auto;
  @media (min-width: 1024px) { 
 		header { font-size: 120%; }
 		nav { font-weight: bold; }
-		.home { height: 30vh;
+		.home { height: fit-content;
 		        padding-top: 5em;
 				padding-left: 8em; }
 		.content { height: 30vh;
