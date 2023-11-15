@@ -15,7 +15,8 @@ header {background-color: #8e8eca;
         background-size: 100% 100%;*/
 		margin-top: 50px;
 		font-size: 90%;
-		min-height: 200px;} 
+		height: fit-content;
+		/*min-height: 200px;*/} 
 
 header a { text-decoration: none; }
 header a:link { color: #FFF; }
@@ -26,7 +27,7 @@ h2 {text-align: center;
 	font-family: 'Courier New';
 	font-size: large;}
 
-.home { height: 20vh;
+.home { height: fit-content;
        padding-top: 2em;
 	   padding-left: 10%;}
 
@@ -81,13 +82,17 @@ footer {position: fixed;
 		text-decoration: none;
 		display: inline-block;
 		font-size: 16px;
-		font-family:'Courier New';}
+		font-family:'Courier New';
+		width: 160px;
+		height: 40px}
 
 img {float: right;
 	border: 1px solid black;
-	padding-right: 10%;}
+	padding-right: 10%;
+	margin: 1em;}
 
-h2 { margin: 0; }
+h2 { margin: 0; 
+	font-size: 50px;}
 
 section { padding-left: .5em;
         padding-right: .5em;
@@ -96,23 +101,17 @@ section { padding-left: .5em;
 #flow { display: block; }
 h2 { margin: 0; }	
 
-main{
-	background-color: white;
-}
+main{background-color: white;}
 
 section { padding-left: .5em;
         padding-right: .5em;
-		
 		margin: 5px; }
 
-#flow { display: block;
-		}
+#flow { display: block; }
 
-#contact{
-	display: block;
+#contact{display: block;
 	border: solid black 1px;
-	padding:20px;
-}
+	padding:20px;}
 
 
 form { display: flex;
@@ -126,6 +125,19 @@ input, datalist, textarea { margin-bottom: .5em; }
 	justify-content: space-around; }
 
 .zoom:hover{transform: scale(1.5);}
+
+div {width: auto;
+    height: auto;
+    padding: 10px;
+    margin: 0;}
+
+.header img {float: left;
+		width: 100px;
+		height: 100px;}
+	  
+.header h1 {position: relative;
+			top: 18px;
+			left: 10px;}
 
 @media (min-width: 600px) {		  
 		nav ul { display: flex;
@@ -151,7 +163,7 @@ input, datalist, textarea { margin-bottom: .5em; }
  @media (min-width: 1024px) { 
 		header { font-size: 120%; }
 		nav { font-weight: bold; }
-		.home { height: 30vh;
+		.home { height: fit-content;
 		        padding-top: 5em;
 				padding-left: 8em; }
 		.content { height: 30vh;
