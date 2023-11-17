@@ -11,21 +11,28 @@ body { background-color: #8e8eca;
 
 header {background-color: #8e8eca;      
         color: #FFF;
-        /*background-image: url(sunrise.jpg);
-        background-size: 100% 100%;*/
 		margin-top: 50px;
 		font-size: 90%;
-		height: fit-content;
-		/*min-height: 200px;*/} 
+		text-align: center;
+		height: fit-content;} 
 
 header a { text-decoration: none; }
 header a:link { color: #FFF; }
 header a:visited { color: #FFF; }
 header a:hover { color: #EDF5F5; }
 
-h2 {text-align: center;
+h2 {margin: 0;
+	text-align: center;
 	font-family: 'Courier New';
-	font-size: large;}
+	font-size: 50px;}
+
+.header img {float: left;
+		width: 100px;
+		height: 100px;}
+	  
+.header h1 {position: relative;
+			top: 18px;
+			left: 10px;}
 
 .home { height: fit-content;
        padding-top: 2em;
@@ -91,15 +98,11 @@ img {float: right;
 	padding-right: 10%;
 	margin: 1em;}
 
-h2 { margin: 0; 
-	font-size: 50px;}
-
 section { padding-left: .5em;
         padding-right: .5em;
 		margin: 5px; }
 
 #flow { display: block; }
-h2 { margin: 0; }	
 
 main{background-color: white;}
 
@@ -113,19 +116,15 @@ section { padding-left: .5em;
 	border: solid black 1px;
 	padding:20px;}
 
-table{
-	margin-left: auto;
+table{margin-left: auto;
 	margin-right: auto;
-	border-collapse: collapse;
-}
+	border-collapse: collapse;}
 
-tr{
-	height: 200px;
+tr{height: 200px;
 	text-align: center;
 	border:#8e8eca solid}
 
-td{
-	width: 200px;}
+td{width: 200px;}
 
 form { display: flex;
       flex-flow: column nowrap; }
@@ -144,13 +143,9 @@ div {width: auto;
     padding: 10px;
     margin: 0;}
 
-.header img {float: left;
-		width: 100px;
-		height: 100px;}
-	  
-.header h1 {position: relative;
-			top: 18px;
-			left: 10px;}
+.figcaption1 {text-align: center;}
+.figcaption2{float: right;}
+
 
 @media (min-width: 600px) {		  
 		nav ul { display: flex;

@@ -9,14 +9,10 @@
 </head>
 
 <body>
-    <header>
-        <div class="header"> 
-            <img src="bag.jpg" alt="logo"/>
-            <h2>My Cart</h2>
-        </div>
+    <header class="header">
+        <h2>My Cart</h2>
     </header>
 
-    
     <nav>
         <ul>
             <li><a href="home.html">Home</a></li>
@@ -27,30 +23,28 @@
     </nav>
 
     <main>
-        <table id = "cartTable">
-" >
+        <br><br><table id = "cartTable">
             <tr>
                 <th>Item</th>
                 <th>Unit Price</th>
                 <th>Quantity </th>
                 <th>Subtotal</th>
             </tr>
-           
         </table>
 
 <script>
 
-var item1Price =0;
-var item2Price =0;
-var item3price =0;
-var item4Price= 0;
-var item5Price =0;
-var item6Price =0;
-var item7price =0;
-var item8Price= 0;
-var item9price =0;
-var item10Price= 0;
-var totalPrice =0;
+    var item1Price =0;
+    var item2Price =0;
+    var item3price =0;
+    var item4Price= 0;
+    var item5Price =0;
+    var item6Price =0;
+    var item7price =0;
+    var item8Price= 0;
+    var item9price =0;
+    var item10Price= 0;
+    var totalPrice =0;
 
    const item1Quantity = localStorage.getItem('item1Quantity');
    const item2Quantity = localStorage.getItem('item2Quantity');
@@ -166,8 +160,9 @@ function appendFinalRow(){
 
     document.getElementById("cartTable").value = table; 
 }
-        </script>
+    </script><br><br><br>
     </main>
+    
     
     <footer>
         Copyright &copy; 2023 Everything Store<br>
