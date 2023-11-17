@@ -26,6 +26,11 @@ h2 {margin: 0;
 	font-family: 'Courier New';
 	font-size: 50px;}
 
+h3 {margin: 0;
+	text-align: center;
+	font-family: 'Courier New';
+	font-size: 20px;}
+
 .header img {float: left;
 		width: 100px;
 		height: 100px;}
@@ -93,10 +98,18 @@ footer {position: fixed;
 		width: 160px;
 		height: 40px}
 
+.button2{background-color: rgb(232, 207, 252); 
+	color:black; 
+	width: 100px; 
+	padding: 5px; 
+	border:1px solid black;
+	margin-left: 50%;}
+
 img {float: right;
-	border: 1px solid black;
 	padding-right: 10%;
-	margin: 1em;}
+	margin: 1em;
+	border: 1px solid lightgray;
+	align-items: center;}
 
 section { padding-left: .5em;
         padding-right: .5em;
@@ -141,7 +154,9 @@ input, datalist, textarea { margin-bottom: .5em; }
 div {width: auto;
     height: auto;
     padding: 10px;
-    margin: 0;}
+    margin: 0;
+	border: 1px solid lightpink;
+	border-radius: 25px;}
 
 .figcaption1 {text-align: center;}
 .figcaption2{float: right;}
