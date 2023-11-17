@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Eveyrthing Store</title>
+  <link href="style.css" rel="stylesheet">
+  <script src="myscripts.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <div class="header"> 
+            <img src="bag.jpg" alt="logo"/>
+            <h2>My Cart</h2>
+        </div>
+    </header>
+
+    
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <table id = "cartTable">
+" >
+            <tr>
+                <th>Item</th>
+                <th>Unit Price</th>
+                <th>Quantity </th>
+                <th>Subtotal</th>
+            </tr>
+           
+        </table>
+
+<script>
+
+var item1Price =0;
+var item2Price =0;
+var item3price =0;
+var item4Price= 0;
+var item5Price =0;
+var item6Price =0;
+var item7price =0;
+var item8Price= 0;
+var item9price =0;
+var item10Price= 0;
+var totalPrice =0;
+
+   const item1Quantity = localStorage.getItem('item1Quantity');
+   const item2Quantity = localStorage.getItem('item2Quantity');
+   const item3Quantity =localStorage.getItem('item3Quantity');
+   const item4Quantity = localStorage.getItem('item4Quantity');
+   const item5Quantity = localStorage.getItem('item5Quantity');
+   const item6Quantity = localStorage.getItem('item6Quantity');
+   const item7Quantity =localStorage.getItem('item7Quantity');
+   const item8Quantity = localStorage.getItem('item8Quantity');
+   const item9Quantity = localStorage.getItem('item9Quantity');
+   const item10Quantity = localStorage.getItem('item10Quantity');
+   
+    
+   calculatePrices();
+
+function calculatePrices(){
+  
+    if(item1Quantity > 0){
+        item1Price = item1Quantity * 23.29;
+        totalPrice = totalPrice + item1Price;
+        addRow("Item 1",23.29,item1Price, item1Quantity);
+    }
+    if(item2Quantity > 0){
+        item2Price = item2Quantity * 82.75;
+        totalPrice = totalPrice + item2Price;
+        addRow("Item 2",82.75,item2Price, item2Quantity);
+    }
+    if(item3Quantity > 0){
+        item3Price = item3Quantity * 15.25;
+        totalPrice = totalPrice + item3Price;
+        addRow("Item 3",15.25,item3Price,item3Quantity);
+    }
+    if(item4Quantity > 0){
+        item4Price = item4Quantity * 32.45;
+        totalPrice = totalPrice + item4Price;
+        addRow("Item 4",32.45,item4Price, item4Quantity);
+    }
+    if(item5Quantity > 0){
+        item5Price = item5Quantity * 19.99;
+        totalPrice = totalPrice + item5Price;
+        addRow("Item 5",19.99,item5Price, item5Quantity);
+    }
+    if(item6Quantity > 0){
+        item6Price = item6Quantity * 15.99;
+        totalPrice = totalPrice + item6Price;
+        addRow("Item 6",15.99,item6Price, item6Quantity);
+    }
+    if(item7Quantity > 0){
+        item7Price = item7Quantity * 24.99;
+        totalPrice = totalPrice + item7Price;
+        addRow("Item 7",24.99,item3Price,item7Quantity);
+    }
+    if(item8Quantity > 0){
+        item8Price = item8Quantity * 36.99;
+        totalPrice = totalPrice + item8Price;
+        addRow("Item 8",32.45,item8Price, item8Quantity);
+    }
+    if(item9Quantity > 0){
+        item9Price = item9Quantity * 18.99;
+        totalPrice = totalPrice + item9Price;
+        addRow("Item 7",18.99,item9Price,item9Quantity);
+    }
+    if(item10Quantity > 0){
+        item10Price = item10Quantity * 21.99;
+        totalPrice = totalPrice + item10Price;
+        addRow("Item 8",21.99,item10Price, item10Quantity);
+    }
+    appendFinalRow();
+}
+
+function addRow(name,unitPrice,price,quantity){
+            
+    table =  document.getElementById("cartTable"); 
+
+   
+    let newRow = document.createElement("tr");
+
+    let nameTd = document.createElement("td");
+    let nameInfo = document.createTextNode(name);
+    nameTd.appendChild (nameInfo);
+    newRow.appendChild(nameTd);
+
+    let upTd = document.createElement("td");
+    let unitPriceInfo = document.createTextNode(unitPrice);
+    upTd.appendChild (unitPriceInfo);
+    newRow.appendChild(upTd);
+
+    let quantityTd = document.createElement("td");
+    let quantityInfo = document.createTextNode(quantity);
+    quantityTd.appendChild (quantityInfo);
+    newRow.appendChild(quantityTd);
+
+    let subtotalTd = document.createElement("td");
+    let subtotalInfo = document.createTextNode(price);
+    subtotalTd.appendChild (subtotalInfo);
+    newRow.appendChild(subtotalTd);
+
+    table.appendChild(newRow);
+
+    document.getElementById("cartTable").value = table;
+}
+
+function appendFinalRow(){
+    table =  document.getElementById("cartTable"); 
+    let firstRow = document.createElement("tr");
+
+    let totalTd = document.createElement("td");
+    let total = document.createTextNode("Subtotal:" + totalPrice);
+    totalTd.appendChild (total);
+    firstRow.appendChild(totalTd);
+
+    table.appendChild(firstRow);
+
+    document.getElementById("cartTable").value = table; 
+}
+        </script>
+    </main>
+    
+    <footer>
+        Copyright &copy; 2023 Everything Store<br>
+    </footer>
+</body>
+</html>

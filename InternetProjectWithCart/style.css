@@ -1,0 +1,220 @@
+* { box-sizing: border-box; }
+
+body { background-color: #8e8eca;
+       color: #40407A;
+	   font-family:'Courier New';
+	   margin: 0;}
+
+#wrapper {background-color: #F5F5F5;
+		padding: 2em; 
+		text-align: center;}
+
+header {background-color: #8e8eca;      
+        color: #FFF;
+        /*background-image: url(sunrise.jpg);
+        background-size: 100% 100%;*/
+		margin-top: 50px;
+		font-size: 90%;
+		height: fit-content;
+		/*min-height: 200px;*/} 
+
+header a { text-decoration: none; }
+header a:link { color: #FFF; }
+header a:visited { color: #FFF; }
+header a:hover { color: #EDF5F5; }
+
+h2 {text-align: center;
+	font-family: 'Courier New';
+	font-size: large;}
+
+.home { height: fit-content;
+       padding-top: 2em;
+	   padding-left: 10%;}
+
+.content { height: 20vh;
+          padding-top: 2em;
+		  padding-left: 10%;}
+
+nav {text-align: right;
+     background-color: #FFF;
+	 margin: 0;
+	 padding-top: 0.5em; 
+	 padding-bottom: 1em;
+	 padding-right: 1em;
+	 position: fixed;
+	 top: 0;
+	 left: 0;
+	 z-index: 9999;
+	 width: 100%;
+	 height: auto;
+	 padding-right: 0;}
+
+nav ul { list-style-type: none; 
+       margin: 0;
+	   padding-right: 2em;
+	   font-size: 1.2em; }
+
+nav li {display: inline;
+      padding-left: 2em; 
+	  width: 30%; }
+
+nav a { text-decoration: none; }
+nav a:link { color: #3F2860; }
+nav a:visited { color: #497777; }
+nav a:hover { color: #A26100; }
+
+li, dd { font-size: 90%; }
+
+footer {position: fixed;
+		bottom: 0;
+		width: 100%;
+		text-align: center; 
+		color: black;
+		background-color: white;
+		font-family: 'Courier New';}
+
+.button {background-color: #04AA6D;
+		border: none;
+		color: white;
+		padding: 15px 32px;
+		margin-left: 10%;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		font-family:'Courier New';
+		width: 160px;
+		height: 40px}
+
+img {float: right;
+	border: 1px solid black;
+	padding-right: 10%;
+	margin: 1em;}
+
+h2 { margin: 0; 
+	font-size: 50px;}
+
+section { padding-left: .5em;
+        padding-right: .5em;
+		margin: 5px; }
+
+#flow { display: block; }
+h2 { margin: 0; }	
+
+main{background-color: white;}
+
+section { padding-left: .5em;
+        padding-right: .5em;
+		margin: 5px; }
+
+#flow { display: block; }
+
+#contact{display: block;
+	border: solid black 1px;
+	padding:20px;}
+
+table{
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+}
+
+tr{
+	height: 200px;
+	text-align: center;
+	border:#8e8eca solid}
+
+td{
+	width: 200px;}
+
+form { display: flex;
+      flex-flow: column nowrap; }
+
+input, datalist, textarea { margin-bottom: .5em; }
+
+#gallery { display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around; }
+
+.zoom:hover{transform: scale(1.5);}
+
+div {width: auto;
+    height: auto;
+    padding: 10px;
+    margin: 0;}
+
+.header img {float: left;
+		width: 100px;
+		height: 100px;}
+	  
+.header h1 {position: relative;
+			top: 18px;
+			left: 10px;}
+
+@media (min-width: 600px) {		  
+		nav ul { display: flex;
+		       flex-flow: row nowrap;
+			   justify-content: flex-end; }	
+		nav li { width: 7em; }
+		section { padding-left: 2em;
+		        padding-right: 2em; }
+		#mathero, #loungehero { display: block;
+								padding-bottom: 1em; }
+		#flow { display: flex;
+		        flex-direction: row; }
+		form { width: 60%;
+		      max-width: 40em;
+			  display:grid;
+			  grid-gap: 1em; gap: 1em;
+			  grid-template-columns: 9em 1fr;
+			  grid-template-rows: auto; }
+		input[type="submit"] { grid-column: 2 / 3;
+                       width: 9em; }
+ }
+
+ @media (min-width: 1024px) { 
+		header { font-size: 120%; }
+		nav { font-weight: bold; }
+		.home { height: fit-content;
+		        padding-top: 5em;
+				padding-left: 8em; }
+		.content { height: 30vh;
+				   padding-top: 2em;
+				   padding-left: 8em; }
+		#wrapper { width: 80%; margin: auto; }
+}
+
+		  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+form { display: flex;
+	flex-direction: column;
+	width: 80%;
+	max-width: 40em;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;}
