@@ -101,7 +101,8 @@ footer {position: fixed;
 .button2{background-color: rgb(232, 207, 252); 
 	color:black; 
 	width: 100px; 
-	padding: 5px; 
+	padding: 15px 32px;
+	display: inline-block; 
 	border:1px solid black;
 	margin-left: 50%;}
 

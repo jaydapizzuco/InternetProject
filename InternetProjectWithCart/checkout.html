@@ -55,7 +55,7 @@
     <input type="radio" id="shipToStore" name="shippingOptions" value="shipToStore">
     <label for="shipToStore"><b>Ship to Store</b></label>
     <br>
-    <button class ="button" id ="calculateShipping" value="calculateShipping" style="margin-left: 0em;">Calculate</button>
+    <button class ="button" id ="calculateShipping" value="calculateShipping" onclick="calculateShipping()" style="margin-left: 0em;">Calculate</button>
 
   <form>
     <br>
@@ -68,9 +68,9 @@
 
   <section>
     <h3 id ="subtotalPrice"></h3>
-    <h3>Shipping Cost  $<p id = "shippingCost"></p> </h3>
-    <h3>Taxes  $<p id = "taxes"></p> </h3>
-    <h1>Total  $<p id = "total"></p> </h1>
+    <h3 id = "shippingCost">Shipping: To Be Calculated </h3>
+    <h3 id = "taxes"> Taxes : To Be Calculated </h3>
+    <h1 id = "total">Total: To Be Calculated </h1>
  
   <button class ="button" id ="pay" value="pay" style="margin-left: 0em;" onclick="displayReceipt()">Pay</button>
 
@@ -82,6 +82,32 @@
     const subtotal = localStorage.getItem('subtotal');
     document.getElementById("subtotal").innerHTML = "Subtotal Price: $" + subtotal; 
     document.getElementById("subtotalPrice").innerHTML = "Subtotal: $" + subtotal;
+
+  
+    var shippingPrice = 0;
+    var taxes = parseFloat(subtotal * 0.15).toFixed(2);
+    document.getElementById("taxes").innerHTML = "Taxes: $ " + taxes;
+    var totalPrice = shippingPrice + taxes;
+
+
+  function calculateShipping(){
+    if(document.getElementById("shipToAddress").checked){
+      shippingPrice = subtotal * 0.25;
+      document.getElementById("shippingCost").innerHTML = "Shipping: $ " + shippingPrice.toFixed(2);
+  }
+  if(document.getElementById("expressShipping").checked){
+      shippingPrice = subtotal * 0.35;
+      document.getElementById("shippingCost").innerHTML = "Shipping: $ " + shippingPrice.toFixed(2);
+  }
+  if(document.getElementById("shipToStore").checked){
+      shippingPrice = 0;
+      document.getElementById("shippingCost").innerHTML = "Shipping: $ " + shippingPrice.toFixed(2);
+  }
+  totalPrice = parseFloat(subtotal) + parseFloat(shippingPrice) + parseFloat(taxes);
+  document.getElementById("total").innerHTML = "Total: $ " + totalPrice.toFixed(2);
+}
+
+
 </script>
 </body>
 </div>
