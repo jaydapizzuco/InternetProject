@@ -3,7 +3,6 @@
 <head>
   <title>Eveyrthing Store</title>
   <link href="style.css" rel="stylesheet">
-  <script src="myscripts.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -32,6 +31,7 @@
             </tr>
         </table>
 
+        <button class = "button2" onclick="checkOut()">Checkout</button>
 <script>
 
     var item1Price =0;
@@ -70,47 +70,47 @@ function calculatePrices(){
     if(item2Quantity > 0){
         item2Price = item2Quantity * 82.75;
         totalPrice = totalPrice + item2Price;
-        addRow("Item 2",82.75,item2Price, item2Quantity);
+        addRow("item2.jpg",82.75,item2Price, item2Quantity);
     }
     if(item3Quantity > 0){
         item3Price = item3Quantity * 15.25;
         totalPrice = totalPrice + item3Price;
-        addRow("Item 3",15.25,item3Price,item3Quantity);
+        addRow("item3.jpg",15.25,item3Price,item3Quantity);
     }
     if(item4Quantity > 0){
         item4Price = item4Quantity * 32.45;
         totalPrice = totalPrice + item4Price;
-        addRow("Item 4",32.45,item4Price, item4Quantity);
+        addRow("item4.jpg",32.45,item4Price, item4Quantity);
     }
     if(item5Quantity > 0){
         item5Price = item5Quantity * 19.99;
         totalPrice = totalPrice + item5Price;
-        addRow("Item 5",19.99,item5Price, item5Quantity);
+        addRow("item5.jpg",19.99,item5Price, item5Quantity);
     }
     if(item6Quantity > 0){
         item6Price = item6Quantity * 15.99;
         totalPrice = totalPrice + item6Price;
-        addRow("Item 6",15.99,item6Price, item6Quantity);
+        addRow("item6.jpg",15.99,item6Price, item6Quantity);
     }
     if(item7Quantity > 0){
         item7Price = item7Quantity * 24.99;
         totalPrice = totalPrice + item7Price;
-        addRow("Item 7",24.99,item3Price,item7Quantity);
+        addRow("item7.jpg",24.99,item3Price,item7Quantity);
     }
     if(item8Quantity > 0){
         item8Price = item8Quantity * 36.99;
         totalPrice = totalPrice + item8Price;
-        addRow("Item 8",32.45,item8Price, item8Quantity);
+        addRow("item8.jpg",32.45,item8Price, item8Quantity);
     }
     if(item9Quantity > 0){
         item9Price = item9Quantity * 18.99;
         totalPrice = totalPrice + item9Price;
-        addRow("Item 7",18.99,item9Price,item9Quantity);
+        addRow("item9.jpg",18.99,item9Price,item9Quantity);
     }
     if(item10Quantity > 0){
         item10Price = item10Quantity * 21.99;
         totalPrice = totalPrice + item10Price;
-        addRow("Item 8",21.99,item10Price, item10Quantity);
+        addRow("item10.jpg",21.99,item10Price, item10Quantity);
     }
     appendFinalRow();
 }
@@ -123,8 +123,11 @@ function addRow(name,unitPrice,price,quantity){
     let newRow = document.createElement("tr");
 
     let nameTd = document.createElement("td");
-    let nameInfo = document.createTextNode(name);
-    nameTd.appendChild (nameInfo);
+    let img = document.createElement('img');
+    img.src = (name);
+    img.style.width = "75%";
+    img.style.height = "auto";
+    nameTd.appendChild (img);
     newRow.appendChild(nameTd);
 
     let upTd = document.createElement("td");
@@ -160,6 +163,13 @@ function appendFinalRow(){
 
     document.getElementById("cartTable").value = table; 
 }
+
+function checkOut(){
+    window.location.href = "checkout.html";
+}
+
+
+localStorage.setItem('subtotal',totalPrice);
     </script><br><br><br>
     </main>
     

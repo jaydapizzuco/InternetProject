@@ -10,21 +10,21 @@
 <nav>
 <ul>
   <li><a href="home.html">Home</a></li>
-  <li><a href="classes.html">Shop</a></li>
-  <li><a href="schedule.html">Cart</a></li>
+  <li><a href="shop.html">Shop</a></li>
+  <li><a href="cart.html">Cart</a></li>
   <li><a href="about.html">About</a></li>
 </ul>
 </nav>
 <div id = "wrapper">
 <main>
-  <h1>Subtotal Amount <b> <p id = "subtotal"></p></b></h1>
+  <h1 id = "subtotal"></h1>
 
   <form>
-    <label> <b>Contact Information</b></label>
+    <label> <h3>Contact Information</h3></label>
   <input type="text" name="email" id="email" required="required" placeholder="Email">
   <br>
 
-  <label><b>Shipping</b></label>
+  <label><h3>Shipping</h3></label>
   <input type="text" name="fname" id="fname" required="required" placeholder="First Name"><input type="text" name="lname" id="lname" required="required" placeholder="Last Name">
   <input type="text" name="address" id="address" required="required" placeholder="Street Address"> 
   <input type="text" name="postalCode" id="postal" required="required" placeholder="Postal Code">  <input type="text" name="city" id="city" required="required" placeholder="City">
@@ -49,17 +49,17 @@
   </form>
   <br>
   <input type="radio" id="shipToAddress" name="shippingOptions" value="shipToAddress">
-    <label for="shipToAddress">Ship to Address</label><br>
+    <label for="shipToAddress"><b>Ship to Address</b></label><br>
     <input type="radio" id="expressShipping" name="shippingOptions" value="expressShipping">
-    <label for="expressShipping">Express Shipping to Address</label><br>
+    <label for="expressShipping"><b>Express Shipping to Address</b></label><br>
     <input type="radio" id="shipToStore" name="shippingOptions" value="shipToStore">
-    <label for="shipToStore">Ship to Store</label>
+    <label for="shipToStore"><b>Ship to Store</b></label>
     <br>
     <button class ="button" id ="calculateShipping" value="calculateShipping" style="margin-left: 0em;">Calculate</button>
 
   <form>
     <br>
-    <label><b>Payment Information</b></label>
+    <label><h3>Payment Information</h3></label>
     <input type="text" name="cardName" id="cardName" required="required" placeholder="Name on Card">
     <input type="number" name="cardNumber" id="cardNumber" required="required" placeholder="Card Number"> 
     <input type="text" name="expirationDate" id="expirationDate" required="required" placeholder="MM/YY">  
@@ -67,7 +67,7 @@
   </form>
 
   <section>
-    <h3>Subtotal  $<p id = "subtotal"></p> </h3>
+    <h3 id ="subtotalPrice"></h3>
     <h3>Shipping Cost  $<p id = "shippingCost"></p> </h3>
     <h3>Taxes  $<p id = "taxes"></p> </h3>
     <h1>Total  $<p id = "total"></p> </h1>
@@ -79,10 +79,9 @@
 
 <script>
 
-  function displayReceipt(){
-    
-  }
-
+    const subtotal = localStorage.getItem('subtotal');
+    document.getElementById("subtotal").innerHTML = "Subtotal Price: $" + subtotal; 
+    document.getElementById("subtotalPrice").innerHTML = "Subtotal: $" + subtotal;
 </script>
 </body>
 </div>
