@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Eveyrthing Store</title>
+  <link href="style.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <main>
+    <h1 align = center>Order Details</h1>
+    <table id = "receipt"></table>
+    <h1 id = "totalOrder" align = center></h1>
+
+  </main>
+  
+</body>
+
+<script>
+
+    const recipt = localStorage.getItem('order');
+    document.getElementById("receipt").innerHTML = recipt;
+
+
+    const total = localStorage.getItem('total');
+    document.getElementById("totalOrder").innerHTML = "Total Price Of Your Order: $" + total;
+
+    const name =  localStorage.getItem('name');
+    
+    alert("Thank you for your order, " + name +". \n We hope to see you again soon!");
+
+</script>
+</html>

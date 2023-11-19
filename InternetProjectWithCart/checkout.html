@@ -105,7 +105,18 @@
   }
   totalPrice = parseFloat(subtotal) + parseFloat(shippingPrice) + parseFloat(taxes);
   document.getElementById("total").innerHTML = "Total: $ " + totalPrice.toFixed(2);
-}
+  }
+
+  
+  function displayReceipt(){
+    localStorage.setItem('total',totalPrice.toFixed(2));
+
+    const name  = document.getElementById("fname").value;
+    localStorage.setItem('name',name);
+    window.location.href = "receipt.html";
+  }
+
+
 
 
 </script>

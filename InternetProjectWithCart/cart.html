@@ -31,6 +31,8 @@
             </tr>
         </table>
 
+        <h1 id = "subtotal" align = "center"></h1>
+
         <button class = "button2" onclick="checkOut()">Checkout</button>
 <script>
 
@@ -45,6 +47,8 @@
     var item9price =0;
     var item10Price= 0;
     var totalPrice =0;
+    var table =  document.getElementById("cartTable"); 
+
 
    const item1Quantity = localStorage.getItem('item1Quantity');
    const item2Quantity = localStorage.getItem('item2Quantity');
@@ -112,7 +116,8 @@ function calculatePrices(){
         totalPrice = totalPrice + item10Price;
         addRow("item10.jpg",21.99,item10Price, item10Quantity);
     }
-    appendFinalRow();
+    localStorage.setItem('order',table.innerHTML);
+    displaySubtotal();
 }
 
 function addRow(name,unitPrice,price,quantity){
@@ -150,18 +155,8 @@ function addRow(name,unitPrice,price,quantity){
     document.getElementById("cartTable").value = table;
 }
 
-function appendFinalRow(){
-    table =  document.getElementById("cartTable"); 
-    let firstRow = document.createElement("tr");
-
-    let totalTd = document.createElement("td");
-    let total = document.createTextNode("Subtotal:" + totalPrice);
-    totalTd.appendChild (total);
-    firstRow.appendChild(totalTd);
-
-    table.appendChild(firstRow);
-
-    document.getElementById("cartTable").value = table; 
+function displaySubtotal(){
+    document.getElementById("subtotal").innerHTML = "Subtotal: $" + totalPrice.toFixed(2); 
 }
 
 function checkOut(){
@@ -169,7 +164,7 @@ function checkOut(){
 }
 
 
-localStorage.setItem('subtotal',totalPrice);
+localStorage.setItem('subtotal',totalPrice.toFixed(2));
     </script><br><br><br>
     </main>
     
