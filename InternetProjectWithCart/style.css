@@ -41,7 +41,8 @@ h3 {margin: 0;
 
 .home { height: fit-content;
        padding-top: 2em;
-	   padding-left: 10%;}
+	   padding-left: 10%;
+	   text-align:left ;}
 
 .content { height: 20vh;
           padding-top: 2em;
@@ -98,20 +99,31 @@ footer {position: fixed;
 		width: 160px;
 		height: 40px}
 
-.button2{background-color: rgb(232, 207, 252); 
+.button2{
+	background-color: rgb(232, 207, 252); 
 	color:black; 
 	font-family: 'Courier New', Courier, monospace;
-	width: 100px; 
-	padding: 15px 32px;
-	display: inline-block; 
+	padding: 15px 32px; 
 	border:1px solid black;
-	text-align: center;
-	margin-left: 50%;}
+	display: inline-block;
+	font-size: 16px;
+	width: 160px;
+	height: 100px;
+	font-weight: bold;
+}
+
+	.center {
+		border: 5px solid;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		padding: 10px;
+	  }
 
 img {float: right;
 	padding-right: 10%;
 	margin: 1em;
-	border: 1px solid lightgray;
 	align-items: center;
     display: flex;}
 

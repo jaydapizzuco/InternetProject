@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body >
     <header class="header">
         <h2>My Cart</h2>
     </header>
@@ -21,6 +21,7 @@
         </ul>
     </nav>
 
+    <div id = "wrapper">
     <main>
         <br><br><table id = "cartTable">
             <tr>
@@ -34,6 +35,7 @@
         <h1 id = "subtotal" align = "center"></h1>
 
         <button class = "button2" onclick="checkOut()">Checkout</button>
+    </div>
 <script>
 
     var item1Price =0;
@@ -72,14 +74,14 @@ function calculatePrices(){
         addRow("item1.jpg",23.29,item1Price, item1Quantity);
     }
     if(item2Quantity > 0){
-        item2Price = item2Quantity * 82.75;
+        item2Price = item2Quantity * 24.99;
         totalPrice = totalPrice + item2Price;
-        addRow("item2.jpg",82.75,item2Price, item2Quantity);
+        addRow("item2.jpg",24.99,item2Price, item2Quantity);
     }
     if(item3Quantity > 0){
-        item3Price = item3Quantity * 15.25;
+        item3Price = item3Quantity * 49.99;
         totalPrice = totalPrice + item3Price;
-        addRow("item3.jpg",15.25,item3Price,item3Quantity);
+        addRow("item3.jpg",49.99,item3Price,item3Quantity);
     }
     if(item4Quantity > 0){
         item4Price = item4Quantity * 32.45;
