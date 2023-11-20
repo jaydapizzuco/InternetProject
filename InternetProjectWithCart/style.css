@@ -86,9 +86,9 @@ footer {position: fixed;
 		background-color: white;
 		font-family: 'Courier New';}
 
-.button {background-color: #04AA6D;
+.button {background-color: white;
 		border: none;
-		color: white;
+		color: black;
 		padding: 15px 32px;
 		margin-left: 10%;
 		text-align: center;
@@ -99,27 +99,24 @@ footer {position: fixed;
 		width: 160px;
 		height: 40px}
 
-.button2{
-	background-color: rgb(232, 207, 252); 
+.button2{background-color: rgb(232, 207, 252); 
 	color:black; 
-	font-family: 'Courier New', Courier, monospace;
+	font-family: 'Courier New';
 	padding: 15px 32px; 
 	border:1px solid black;
 	display: inline-block;
 	font-size: 16px;
 	width: 160px;
-	height: 100px;
+	height: 80px;
 	font-weight: bold;
-}
+	margin-left: 45%;}
 
-	.center {
-		border: 5px solid;
+.center {border: 5px solid;
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		padding: 10px;
-	  }
+		padding: 10px;}
 
 img {float: right;
 	padding-right: 10%;
