@@ -87,7 +87,7 @@ footer {position: fixed;
 		font-family: 'Courier New';}
 
 .button {background-color: white;
-		border: none;
+		border: black 1px solid;
 		color: black;
 		padding: 15px 32px;
 		margin-left: 10%;
