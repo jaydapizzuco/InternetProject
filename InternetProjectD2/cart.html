@@ -1,0 +1,194 @@
+<!-------------------------------------------------------
+Final Project
+Written by: Jayda Pizzuco 2281161 & Melissa Weller
+*“The responsibility and work of each student shall be described precisely here”
+
+Jayda:
+Implementing the calculatePrices(), addRow() , displaySubtotal() and and checkout() methods
+Getting and setting items to localstorage
+For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 2023
+-------------------------------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Eveyrthing Store</title>
+  <link href="style.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body >
+    <header class="header">
+        <h2>My Cart</h2>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <div id = "wrapper">
+    <main>
+        <br><br><table id = "cartTable">
+            <tr>
+                <th>Item</th>
+                <th>Unit Price</th>
+                <th>Quantity </th>
+                <th>Subtotal</th>
+            </tr>
+        </table>
+
+        <h1 id = "subtotal" align = "center"></h1>
+
+        <button class = "button2" onclick="checkOut()">Checkout</button>
+    </div>
+
+<script>
+
+    //declare variables for the price of each item
+    var item1Price =0;
+    var item2Price =0;
+    var item3price =0;
+    var item4Price= 0;
+    var item5Price =0;
+    var item6Price =0;
+    var item7price =0;
+    var item8Price= 0;
+    var item9price =0;
+    var item10Price= 0;
+    var totalPrice =0;
+    var table =  document.getElementById("cartTable"); 
+
+
+    //retrieve the quantity of each item that has been added to cart 
+   const item1Quantity = localStorage.getItem('item1Quantity');
+   const item2Quantity = localStorage.getItem('item2Quantity');
+   const item3Quantity =localStorage.getItem('item3Quantity');
+   const item4Quantity = localStorage.getItem('item4Quantity');
+   const item5Quantity = localStorage.getItem('item5Quantity');
+   const item6Quantity = localStorage.getItem('item6Quantity');
+   const item7Quantity =localStorage.getItem('item7Quantity');
+   const item8Quantity = localStorage.getItem('item8Quantity');
+   const item9Quantity = localStorage.getItem('item9Quantity');
+   const item10Quantity = localStorage.getItem('item10Quantity');
+   
+    
+   calculatePrices();
+
+function calculatePrices(){
+  // if an item has been added to cart we calculate the subtotal price of this item by multiplying the quantity by the unit price
+  // we then create a new row to display the item in the cart table
+    if(item1Quantity > 0){
+        item1Price = item1Quantity * 23.29;
+        totalPrice = totalPrice + item1Price;
+        addRow("item1.jpg",23.29,item1Price, item1Quantity);
+    }
+    if(item2Quantity > 0){
+        item2Price = item2Quantity * 24.99;
+        totalPrice = totalPrice + item2Price;
+        addRow("item2.jpg",24.99,item2Price, item2Quantity);
+    }
+    if(item3Quantity > 0){
+        item3Price = item3Quantity * 49.99;
+        totalPrice = totalPrice + item3Price;
+        addRow("item3.jpg",49.99,item3Price,item3Quantity);
+    }
+    if(item4Quantity > 0){
+        item4Price = item4Quantity * 32.45;
+        totalPrice = totalPrice + item4Price;
+        addRow("item4.jpg",32.45,item4Price, item4Quantity);
+    }
+    if(item5Quantity > 0){
+        item5Price = item5Quantity * 19.99;
+        totalPrice = totalPrice + item5Price;
+        addRow("item5.jpg",19.99,item5Price, item5Quantity);
+    }
+    if(item6Quantity > 0){
+        item6Price = item6Quantity * 15.99;
+        totalPrice = totalPrice + item6Price;
+        addRow("item6.jpg",15.99,item6Price, item6Quantity);
+    }
+    if(item7Quantity > 0){
+        item7Price = item7Quantity * 24.99;
+        totalPrice = totalPrice + item7Price;
+        addRow("item7.jpg",24.99,item7Price,item7Quantity);
+    }
+    if(item8Quantity > 0){
+        item8Price = item8Quantity * 36.99;
+        totalPrice = totalPrice + item8Price;
+        addRow("item8.jpg",32.45,item8Price, item8Quantity);
+    }
+    if(item9Quantity > 0){
+        item9Price = item9Quantity * 18.99;
+        totalPrice = totalPrice + item9Price;
+        addRow("item9.jpg",18.99,item9Price,item9Quantity);
+    }
+    if(item10Quantity > 0){
+        item10Price = item10Quantity * 21.99;
+        totalPrice = totalPrice + item10Price;
+        addRow("item10.jpg",21.99,item10Price, item10Quantity);
+    }
+    localStorage.setItem('order',table.innerHTML);
+    displaySubtotal();
+}
+
+//this method creates a row in the cart table 
+function addRow(name,unitPrice,price,quantity){
+            
+    table =  document.getElementById("cartTable"); 
+   
+    let newRow = document.createElement("tr");
+
+    let nameTd = document.createElement("td");
+    let img = document.createElement('img');
+    img.src = (name);
+    img.style.width = "75%";
+    img.style.height = "auto";
+    nameTd.appendChild (img);
+    newRow.appendChild(nameTd);
+
+    let upTd = document.createElement("td");
+    let unitPriceInfo = document.createTextNode(unitPrice);
+    upTd.appendChild (unitPriceInfo);
+    newRow.appendChild(upTd);
+
+    let quantityTd = document.createElement("td");
+    let quantityInfo = document.createTextNode(quantity);
+    quantityTd.appendChild (quantityInfo);
+    newRow.appendChild(quantityTd);
+
+    let subtotalTd = document.createElement("td");
+    let subtotalInfo = document.createTextNode(price);
+    subtotalTd.appendChild (subtotalInfo);
+    newRow.appendChild(subtotalTd);
+
+    table.appendChild(newRow);
+
+    document.getElementById("cartTable").value = table;
+}
+
+//displays the newly calculated subtotal price (this price is calcuated in the calculatePrices())
+function displaySubtotal(){
+    document.getElementById("subtotal").innerHTML = "Subtotal: $" + totalPrice.toFixed(2); 
+}
+
+//opens up the checkout page
+function checkOut(){
+    window.location.href = "checkout.html";
+}
+
+//saves subtotal price to loacl storage so that we can use it in the checkout page
+localStorage.setItem('subtotal',totalPrice.toFixed(2));
+    </script><br><br><br>
+    </main>
+    
+    
+    <footer>
+        Copyright &copy; 2023 Everything Store<br>
+    </footer>
+</body>
+</html>

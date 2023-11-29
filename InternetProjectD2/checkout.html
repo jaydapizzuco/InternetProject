@@ -1,0 +1,152 @@
+<!-------------------------------------------------------
+Final Project
+Written by: Jayda Pizzuco 2281161 & Melissa Weller
+*“The responsibility and work of each student shall be described precisely here”
+For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 2023
+-------------------------------------------------------->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Everything Store</title>
+<link href="style.css" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<nav>
+<ul>
+  <li><a href="home.html">Home</a></li>
+  <li><a href="shop.html">Shop</a></li>
+  <li><a href="cart.html">Cart</a></li>
+  <li><a href="about.html">About</a></li>
+</ul>
+</nav>
+<div id = "wrapper">
+<main>
+  <h1 id = "subtotal"></h1>
+
+  <form>
+    <label> <h3>Contact Information</h3></label>
+  <input type="text" name="email" id="email" required="required" placeholder="Email">
+  <br>
+
+  <label><h3>Shipping</h3></label>
+  <input type="text" name="fname" id="fname" required="required" placeholder="First Name"><input type="text" name="lname" id="lname" required="required" placeholder="Last Name">
+  <input type="text" name="address" id="address" required="required" placeholder="Street Address"> 
+  <input type="text" name="postalCode" id="postal" required="required" placeholder="Postal Code">  <input type="text" name="city" id="city" required="required" placeholder="City">
+  <input type="text" name="province" id="province" required="required" placeholder="Province" list="provinces">
+  
+  <datalist id="provinces">
+    <option>Alberta</option>
+    <option>British Columbia</option>
+    <option>Manitoba</option>
+    <option>New Brunswick</option>
+    <option>Newfoundland and Labrador</option>
+    <option>Northwest Territories</option>
+    <option>Nova Scotia</option>
+    <option>Nunavut</option>
+    <option>Ontario</option>
+    <option>Prince Edward Island</option>
+    <option>Quebec</option>
+    <option>Saskatchewan</option>
+    <option>Yukon</option>
+    </datalist>
+
+  </form>
+  <br>
+  <input type="radio" id="shipToAddress" name="shippingOptions" value="shipToAddress">
+    <label for="shipToAddress"><b>Ship to Address</b></label><br>
+    <input type="radio" id="expressShipping" name="shippingOptions" value="expressShipping">
+    <label for="expressShipping"><b>Express Shipping to Address</b></label><br>
+    <input type="radio" id="shipToStore" name="shippingOptions" value="shipToStore">
+    <label for="shipToStore"><b>Ship to Store</b></label>
+    <br>
+    <button class ="button" id ="calculateShipping" value="calculateShipping" onclick="calculateShipping()" style="margin-left: 0em;">Calculate</button>
+
+  <form>
+    <br>
+    <label><h3>Payment Information</h3></label>
+    <input type="text" name="cardName" id="cardName" required="required" placeholder="Name on Card">
+    <input input type="text" inputmode="numeric" pattern="[0-9]*" name="cardNumber" id="cardNumber" required="required" placeholder="Card Number" maxlength="16"> 
+    <input type="text" name="expirationDate" id="expirationDate" required="required" placeholder="MMYY" maxLength = "4">  
+    <input input type="text" inputmode="numeric" pattern="[0-9]*" name="cvc" id="province" required="required" placeholder="CVC" maxlength="3">
+  </form>
+
+  <section>
+    <h3 id ="subtotalPrice"></h3>
+    <h3 id = "shippingCost">Shipping: To Be Calculated </h3>
+    <h3 id = "taxes"> Taxes : To Be Calculated </h3>
+    <h1 id = "total">Total: To Be Calculated </h1>
+ 
+  <button class ="button" id ="pay" value="pay" style="margin-left: 0em;" onclick="validateForm()">Pay</button>
+
+</section>
+</main>
+
+<script>
+
+  //retrieve the subtotal price that was calculated on the cart page from local storage
+    const subtotal = localStorage.getItem('subtotal');
+    document.getElementById("subtotal").innerHTML = "Subtotal Price: $" + subtotal; 
+    document.getElementById("subtotalPrice").innerHTML = "Subtotal: $" + subtotal;
+
+  
+    var shippingPrice = 0;
+    var taxes = parseFloat(subtotal * 0.15).toFixed(2);
+    document.getElementById("taxes").innerHTML = "Taxes: $ " + taxes;
+    var totalPrice = shippingPrice + taxes;
+
+
+  function calculateShipping(){
+    // calculates the shipping price depending on which option the customer has chosen 
+
+    if(document.getElementById("shipToAddress").checked){
+      shippingPrice = subtotal * 0.25;
+      document.getElementById("shippingCost").innerHTML = "Shipping: $ " + shippingPrice.toFixed(2);
+  }
+  if(document.getElementById("expressShipping").checked){
+      shippingPrice = subtotal * 0.35;
+      document.getElementById("shippingCost").innerHTML = "Shipping: $ " + shippingPrice.toFixed(2);
+  }
+  if(document.getElementById("shipToStore").checked){
+      shippingPrice = 0;
+      document.getElementById("shippingCost").innerHTML = "Shipping: $ " + shippingPrice.toFixed(2);
+  }
+  totalPrice = parseFloat(subtotal) + parseFloat(shippingPrice) + parseFloat(taxes);
+  document.getElementById("total").innerHTML = "Total: $ " + totalPrice.toFixed(2);
+  }
+
+  function validateForm(){
+   
+     var inputs = document.getElementsByTagName('input');
+    for (var i = 0; i < inputs.length; i++) {
+        // make sure that the required fields are not empty
+        if(inputs[i].hasAttribute("required")){
+            if(inputs[i].value ==""){
+                // if there is a field is empty send an alert
+                alert("Please enter all the required information.");
+                return false;
+            }
+        }
+    }
+    displayReceipt();
+    return true;
+  }
+
+  function displayReceipt(){
+    //saves the total price  and the customer's first name to local storage so that they can be displayed on the receipt page
+    localStorage.setItem('total',totalPrice.toFixed(2));
+
+    const name  = document.getElementById("fname").value;
+    localStorage.setItem('name',name);
+
+    //open the Receipt page
+    window.location.href = "receipt.html";
+  }
+
+
+</script>
+</body>
+</div>
+</html>

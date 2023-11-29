@@ -1,0 +1,42 @@
+<!-------------------------------------------------------
+Final Project
+Written by: Jayda Pizzuco 2281161 & Melissa Weller
+*“The responsibility and work of each student shall be described precisely here”
+For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 2023
+-------------------------------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Everything Store</title>
+  <link href="style.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<div id = "wrapper" class = "center">
+<body>
+  <main>
+    <h1 align = center>Order Details</h1>
+    <table id = "receipt"></table>
+    <h1 id = "totalOrder" align = center></h1>
+    <a href="shop.html">
+      <button class="button2">Return To Shop</button>
+  </main>
+</body>
+</div>
+
+<script>
+
+    const recipt = localStorage.getItem('order');
+    document.getElementById("receipt").innerHTML = recipt;
+
+
+    const total = localStorage.getItem('total');
+    document.getElementById("totalOrder").innerHTML = "Total Price Of Your Order: $" + total;
+
+    const name =  localStorage.getItem('name');
+    
+    alert("Thank you for your order, " + name +". \n We hope to see you again soon!");
+
+</script>
+</html>
