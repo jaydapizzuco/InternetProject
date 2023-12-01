@@ -122,9 +122,24 @@ For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 
         document.getElementById('item8Name').innerHTML = productNameArr[7];
         document.getElementById('item9Name').innerHTML = productNameArr[8];
         document.getElementById('item10Name').innerHTML = productNameArr[9];
+
+
+         //save the item names to local storage so we can use them on the cart page
+         localStorage.setItem('item1Name',productNameArr[0]);
+         localStorage.setItem('item2Name',productNameArr[1]);
+         localStorage.setItem('item3Name',productNameArr[2]);
+         localStorage.setItem('item4Name',productNameArr[3]);
+         localStorage.setItem('item5Name',productNameArr[4]);
+         localStorage.setItem('item6Name',productNameArr[5]);
+         localStorage.setItem('item7Name',productNameArr[6]);
+         localStorage.setItem('item8Name',productNameArr[7]);
+         localStorage.setItem('item9Name',productNameArr[8]);
+         localStorage.setItem('item10Name',productNameArr[9]);
         }
         }
          request.send();
+
+        
 
 function updateCart(){
 
@@ -139,6 +154,7 @@ function updateCart(){
    const item9Quantity = document.getElementById("item9Quantity").value;
    const item10Quantity = document.getElementById("item10Quantity").value;
 
+   
     localStorage.setItem('item1Quantity',item1Quantity);
     localStorage.setItem('item2Quantity',item2Quantity);
     localStorage.setItem('item3Quantity',item3Quantity);

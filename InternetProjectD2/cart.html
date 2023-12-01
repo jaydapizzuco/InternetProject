@@ -36,6 +36,7 @@ For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 
         <br><br><table id = "cartTable">
             <tr>
                 <th>Item</th>
+                <th>Item Name</th>
                 <th>Unit Price</th>
                 <th>Quantity </th>
                 <th>Subtotal</th>
@@ -75,7 +76,18 @@ For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 
    const item8Quantity = localStorage.getItem('item8Quantity');
    const item9Quantity = localStorage.getItem('item9Quantity');
    const item10Quantity = localStorage.getItem('item10Quantity');
-   
+
+   //retrieve the name of each item that has been added to cart 
+   const item1Name = localStorage.getItem('item1Name');
+   const item2Name = localStorage.getItem('item2Name');
+   const item3Name = localStorage.getItem('item3Name');
+   const item4Name = localStorage.getItem('item4Name');
+   const item5Name = localStorage.getItem('item5Name');
+   const item6Name = localStorage.getItem('item6Name');
+   const item7Name = localStorage.getItem('item7Name');
+   const item8Name = localStorage.getItem('item8Name');
+   const item9Name = localStorage.getItem('item9Name');
+   const item10Name = localStorage.getItem('item10Name');
     
    calculatePrices();
 
@@ -85,70 +97,75 @@ function calculatePrices(){
     if(item1Quantity > 0){
         item1Price = item1Quantity * 23.29;
         totalPrice = totalPrice + item1Price;
-        addRow("item1.jpg",23.29,item1Price, item1Quantity);
+        addRow("item1.jpg",item1Name,23.29,item1Price, item1Quantity);
     }
     if(item2Quantity > 0){
         item2Price = item2Quantity * 24.99;
         totalPrice = totalPrice + item2Price;
-        addRow("item2.jpg",24.99,item2Price, item2Quantity);
+        addRow("item2.jpg",item2Name,24.99,item2Price, item2Quantity);
     }
     if(item3Quantity > 0){
         item3Price = item3Quantity * 49.99;
         totalPrice = totalPrice + item3Price;
-        addRow("item3.jpg",49.99,item3Price,item3Quantity);
+        addRow("item3.jpg",item3Name,49.99,item3Price,item3Quantity);
     }
     if(item4Quantity > 0){
         item4Price = item4Quantity * 32.45;
         totalPrice = totalPrice + item4Price;
-        addRow("item4.jpg",32.45,item4Price, item4Quantity);
+        addRow("item4.jpg",item4Name,32.45,item4Price, item4Quantity);
     }
     if(item5Quantity > 0){
         item5Price = item5Quantity * 19.99;
         totalPrice = totalPrice + item5Price;
-        addRow("item5.jpg",19.99,item5Price, item5Quantity);
+        addRow("item5.jpg",item5Name,19.99,item5Price, item5Quantity);
     }
     if(item6Quantity > 0){
         item6Price = item6Quantity * 15.99;
         totalPrice = totalPrice + item6Price;
-        addRow("item6.jpg",15.99,item6Price, item6Quantity);
+        addRow("item6.jpg",item6Name,15.99,item6Price, item6Quantity);
     }
     if(item7Quantity > 0){
         item7Price = item7Quantity * 24.99;
         totalPrice = totalPrice + item7Price;
-        addRow("item7.jpg",24.99,item7Price,item7Quantity);
+        addRow("item7.jpg",item7Name,24.99,item7Price,item7Quantity);
     }
     if(item8Quantity > 0){
         item8Price = item8Quantity * 36.99;
         totalPrice = totalPrice + item8Price;
-        addRow("item8.jpg",32.45,item8Price, item8Quantity);
+        addRow("item8.jpg",item8Name,32.45,item8Price, item8Quantity);
     }
     if(item9Quantity > 0){
         item9Price = item9Quantity * 18.99;
         totalPrice = totalPrice + item9Price;
-        addRow("item9.jpg",18.99,item9Price,item9Quantity);
+        addRow("item9.jpg",item9Name,18.99,item9Price,item9Quantity);
     }
     if(item10Quantity > 0){
         item10Price = item10Quantity * 21.99;
         totalPrice = totalPrice + item10Price;
-        addRow("item10.jpg",21.99,item10Price, item10Quantity);
+        addRow("item10.jpg",item10Name,21.99,item10Price, item10Quantity);
     }
     localStorage.setItem('order',table.innerHTML);
     displaySubtotal();
 }
 
 //this method creates a row in the cart table 
-function addRow(name,unitPrice,price,quantity){
+function addRow(imgName,name,unitPrice,price,quantity){
             
     table =  document.getElementById("cartTable"); 
    
     let newRow = document.createElement("tr");
 
-    let nameTd = document.createElement("td");
+    let imgTd = document.createElement("td");
     let img = document.createElement('img');
-    img.src = (name);
+    img.src = (imgName);
     img.style.width = "75%";
     img.style.height = "auto";
-    nameTd.appendChild (img);
+    imgTd.appendChild (img);
+    newRow.appendChild(imgTd);
+
+    let nameTd = document.createElement("td");
+    let nameInfo = document.createTextNode(name);
+    nameTd.appendChild (nameInfo);
     newRow.appendChild(nameTd);
 
     let upTd = document.createElement("td");
