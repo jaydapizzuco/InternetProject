@@ -11,7 +11,7 @@ For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Eveyrthing Store</title>
+  <title>Everything Store Cart</title>
   <link href="style.css" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,16 +51,16 @@ For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 
 <script>
 
     //declare variables for the price of each item
-    var item1Price =0;
-    var item2Price =0;
-    var item3price =0;
-    var item4Price= 0;
-    var item5Price =0;
-    var item6Price =0;
-    var item7price =0;
-    var item8Price= 0;
-    var item9price =0;
-    var item10Price= 0;
+    var item1TotalPrice =0;
+    var item2TotalPrice =0;
+    var item3TotalPrice =0;
+    var item4TotalPrice= 0;
+    var item5TotalPrice =0;
+    var item6TotalPrice =0;
+    var item7TotalPrice =0;
+    var item8TotalPrice= 0;
+    var item9TotalPrice =0;
+    var item10TotalPrice= 0;
     var totalPrice =0;
     var table =  document.getElementById("cartTable"); 
 
@@ -95,14 +95,14 @@ function calculatePrices(){
   // if an item has been added to cart we calculate the subtotal price of this item by multiplying the quantity by the unit price
   // we then create a new row to display the item in the cart table
     if(item1Quantity > 0){
-        item1Price = item1Quantity * 23.29;
-        totalPrice = totalPrice + item1Price;
-        addRow("item1.jpg",item1Name,23.29,item1Price, item1Quantity);
+        item1TotalPrice = item1Quantity * 23.29;
+        totalPrice = totalPrice + item1TotalPrice;
+        addRow("item1.jpg",item1Name,23.29,item1TotalPrice, item1Quantity);
     }
     if(item2Quantity > 0){
-        item2Price = item2Quantity * 24.99;
-        totalPrice = totalPrice + item2Price;
-        addRow("item2.jpg",item2Name,24.99,item2Price, item2Quantity);
+        item2TotalPrice = item2Quantity * 24.99;
+        totalPrice = totalPrice + item2TotalPrice;
+        addRow("item2.jpg",item2Name,24.99,item2TotalPrice, item2Quantity);
     }
     if(item3Quantity > 0){
         item3Price = item3Quantity * 49.99;
@@ -110,19 +110,19 @@ function calculatePrices(){
         addRow("item3.jpg",item3Name,49.99,item3Price,item3Quantity);
     }
     if(item4Quantity > 0){
-        item4Price = item4Quantity * 32.45;
-        totalPrice = totalPrice + item4Price;
-        addRow("item4.jpg",item4Name,32.45,item4Price, item4Quantity);
+        item4TotalPrice = item4Quantity * 32.45;
+        totalPrice = totalPrice + item4TotalPrice;
+        addRow("item4.jpg",item4Name,32.45,item4TotalPrice, item4Quantity);
     }
     if(item5Quantity > 0){
-        item5Price = item5Quantity * 19.99;
-        totalPrice = totalPrice + item5Price;
-        addRow("item5.jpg",item5Name,19.99,item5Price, item5Quantity);
+        item5TotalPrice = item5Quantity * 19.99;
+        totalPrice = totalPrice + item5TotalPrice;
+        addRow("item5.jpg",item5Name,19.99,item5TotalPrice, item5Quantity);
     }
     if(item6Quantity > 0){
-        item6Price = item6Quantity * 15.99;
-        totalPrice = totalPrice + item6Price;
-        addRow("item6.jpg",item6Name,15.99,item6Price, item6Quantity);
+        item6TotalPrice = item6Quantity * 15.99;
+        totalPrice = totalPrice + item6TotalPrice;
+        addRow("item6.jpg",item6Name,15.99,item6TotalPrice, item6Quantity);
     }
     if(item7Quantity > 0){
         item7Price = item7Quantity * 24.99;
@@ -130,9 +130,9 @@ function calculatePrices(){
         addRow("item7.jpg",item7Name,24.99,item7Price,item7Quantity);
     }
     if(item8Quantity > 0){
-        item8Price = item8Quantity * 36.99;
-        totalPrice = totalPrice + item8Price;
-        addRow("item8.jpg",item8Name,32.45,item8Price, item8Quantity);
+        item8TotalPrice = item8Quantity * 36.99;
+        totalPrice = totalPrice + item8TotalPrice;
+        addRow("item8.jpg",item8Name,32.45,item8TotalPrice, item8Quantity);
     }
     if(item9Quantity > 0){
         item9Price = item9Quantity * 18.99;
@@ -140,9 +140,9 @@ function calculatePrices(){
         addRow("item9.jpg",item9Name,18.99,item9Price,item9Quantity);
     }
     if(item10Quantity > 0){
-        item10Price = item10Quantity * 21.99;
-        totalPrice = totalPrice + item10Price;
-        addRow("item10.jpg",item10Name,21.99,item10Price, item10Quantity);
+        item10TotalPrice = item10Quantity * 21.99;
+        totalPrice = totalPrice + item10TotalPrice;
+        addRow("item10.jpg",item10Name,21.99,item10TotalPrice, item10Quantity);
     }
     localStorage.setItem('order',table.innerHTML);
     displaySubtotal();

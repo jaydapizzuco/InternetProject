@@ -68,9 +68,9 @@ For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 
     <br>
     <label><h3>Payment Information</h3></label>
     <input type="text" name="cardName" id="cardName" required="required" placeholder="Name on Card">
-    <input input type="text" inputmode="numeric" pattern="[0-9]*" name="cardNumber" id="cardNumber" required="required" placeholder="Card Number" maxlength="16"> 
-    <input type="text" name="expirationDate" id="expirationDate" required="required" placeholder="MMYY" maxLength = "4">  
-    <input input type="text" inputmode="numeric" pattern="[0-9]*" name="cvc" id="province" required="required" placeholder="CVC" maxlength="3">
+    <input input type="number"  name="cardNumber" id="cardNumber" required="required" placeholder="Card Number" maxlength="16"> 
+    <input type="number"  name="expirationDate" id="expirationDate" required="required" placeholder="MMYY" maxLength = "4">  
+    <input input type="number"  pattern="\d*" name="cvc" id="cvc" required="required" placeholder="CVC" maxlength="3">
   </form>
 
   <section>
@@ -97,16 +97,15 @@ For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 
     document.getElementById("taxes").innerHTML = "Taxes: $ " + taxes;
     var totalPrice = shippingPrice + taxes;
 
-
   function calculateShipping(){
     // calculates the shipping price depending on which option the customer has chosen 
 
     if(document.getElementById("shipToAddress").checked){
-      shippingPrice = subtotal * 0.25;
+      shippingPrice = subtotal * 0.18;
       document.getElementById("shippingCost").innerHTML = "Shipping: $ " + shippingPrice.toFixed(2);
   }
   if(document.getElementById("expressShipping").checked){
-      shippingPrice = subtotal * 0.35;
+      shippingPrice = subtotal * 0.22;
       document.getElementById("shippingCost").innerHTML = "Shipping: $ " + shippingPrice.toFixed(2);
   }
   if(document.getElementById("shipToStore").checked){
