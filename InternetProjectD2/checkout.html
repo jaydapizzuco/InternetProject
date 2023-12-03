@@ -2,13 +2,16 @@
 Final Project
 Written by: Jayda Pizzuco 2281161 & Melissa Weller
 *“The responsibility and work of each student shall be described precisely here”
+
+Jayda:
+Implemeted the form (input values), the form validation, retrieving values from local storage, calculateShipping() and displayReceipt()
 For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 2023
 -------------------------------------------------------->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Everything Store</title>
+<title>Checkout</title>
 <link href="style.css" rel="stylesheet">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,7 +72,7 @@ For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 
     <label><h3>Payment Information</h3></label>
     <input type="text" name="cardName" id="cardName" required="required" placeholder="Name on Card">
     <input input type="number"  name="cardNumber" id="cardNumber" required="required" placeholder="Card Number" maxlength="16"> 
-    <input type="number"  name="expirationDate" id="expirationDate" required="required" placeholder="MMYY" maxLength = "4">  
+    <input type="text"  name="expirationDate" id="expirationDate" required="required" placeholder="MM/YY" maxLength = "5">  
     <input input type="number"  pattern="\d*" name="cvc" id="cvc" required="required" placeholder="CVC" maxlength="3">
   </form>
 
