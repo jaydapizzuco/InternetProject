@@ -5,6 +5,7 @@ Written by: Jayda Pizzuco 2281161 & Melissa Weller
 
 Jayda:
 Retrieving the order details table from local storage and sending the alert
+
 For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 2023
 -------------------------------------------------------->
 <!DOCTYPE html>
@@ -29,10 +30,8 @@ For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 
 </div>
 
 <script>
-
     const recipt = localStorage.getItem('order');
     document.getElementById("receipt").innerHTML = recipt;
-
 
     const total = localStorage.getItem('total');
     document.getElementById("totalOrder").innerHTML = "Total Price Of Your Order: $" + total;
@@ -40,6 +39,5 @@ For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 
     const name =  localStorage.getItem('name');
     
     alert("Thank you for your order, " + name +". \n We hope to see you again soon!");
-
 </script>
 </html>

@@ -3,9 +3,15 @@ Final Project
 Written by: Jayda Pizzuco 2281161 & Melissa Weller
 *“The responsibility and work of each student shall be described precisely here”
 
+Melissa: 
+Creating the navigation bar, declare variables
+Looked over all the methods and helped when needed
+Created the styling
+
 Jayda:
 Implementing the calculatePrices(), addRow() , displaySubtotal() and and checkout() methods
 Getting and setting items to localstorage
+
 For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 2023
 -------------------------------------------------------->
 <!DOCTYPE html>
@@ -149,8 +155,7 @@ function calculatePrices(){
 }
 
 //this method creates a row in the cart table 
-function addRow(imgName,name,unitPrice,price,quantity){
-            
+function addRow(imgName,name,unitPrice,price,quantity){   
     table =  document.getElementById("cartTable"); 
    
     let newRow = document.createElement("tr");
@@ -202,7 +207,6 @@ function checkOut(){
 localStorage.setItem('subtotal',totalPrice.toFixed(2));
     </script><br><br><br>
     </main>
-    
     
     <footer>
         Copyright &copy; 2023 Everything Store<br>

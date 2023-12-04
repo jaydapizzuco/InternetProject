@@ -3,15 +3,19 @@ Final Project
 Written by: Jayda Pizzuco 2281161 & Melissa Weller
 *“The responsibility and work of each student shall be described precisely here”
 For the shop page 
+
 Melissa:
+Created the navigation and footer
 Implemented the styling and the gallery that displays all the products 
 Added the zoom function that expands the image when the user's mouse hovers over it 
+Added the view cart buttons
+Created the styling for the page 
 
 Jayda:
-Added the Add To Cart Inputs underneath each Item 
 Implemented the UpdateCart method that gets all the information about the products that are added to cart, saves this information to local storage and opens up the Cart page
 Added the images for the products
 Implemented JSON function that gets the product names
+
 For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 2023
 -------------------------------------------------------->
 <!DOCTYPE html>
@@ -139,8 +143,6 @@ For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 
         }
          request.send();
 
-        
-
 function updateCart(){
 
    const item1Quantity = document.getElementById("item1Quantity").value;
@@ -153,8 +155,7 @@ function updateCart(){
    const item8Quantity = document.getElementById("item8Quantity").value;
    const item9Quantity = document.getElementById("item9Quantity").value;
    const item10Quantity = document.getElementById("item10Quantity").value;
-
-   
+  
     localStorage.setItem('item1Quantity',item1Quantity);
     localStorage.setItem('item2Quantity',item2Quantity);
     localStorage.setItem('item3Quantity',item3Quantity);

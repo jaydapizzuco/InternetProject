@@ -3,8 +3,14 @@ Final Project
 Written by: Jayda Pizzuco 2281161 & Melissa Weller
 *“The responsibility and work of each student shall be described precisely here”
 
+Melissa: 
+Creating the navigation and footer
+Created the data list, displayReceipt() and finished some details about the form validation
+
 Jayda:
-Implemeted the form (input values), the form validation, retrieving values from local storage, calculateShipping() and displayReceipt()
+Implemeted the form (input values), the form validation,
+retrieving values from local storage and calculateShipping()
+
 For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 2023
 -------------------------------------------------------->
 
@@ -63,8 +69,7 @@ For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 
     <input type="radio" id="expressShipping" name="shippingOptions" value="expressShipping">
     <label for="expressShipping"><b>Express Shipping to Address</b></label><br>
     <input type="radio" id="shipToStore" name="shippingOptions" value="shipToStore">
-    <label for="shipToStore"><b>Ship to Store</b></label>
-    <br>
+    <label for="shipToStore"><b>Ship to Store</b></label><br>
     <button class ="button" id ="calculateShipping" value="calculateShipping" onclick="calculateShipping()" style="margin-left: 0em;">Calculate</button>
 
   <form>
@@ -120,7 +125,6 @@ For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 
   }
 
   function validateForm(){
-   
      var inputs = document.getElementsByTagName('input');
     for (var i = 0; i < inputs.length; i++) {
         // make sure that the required fields are not empty
@@ -146,8 +150,6 @@ For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 
     //open the Receipt page
     window.location.href = "receipt.html";
   }
-
-
 </script>
 </body>
 </div>
