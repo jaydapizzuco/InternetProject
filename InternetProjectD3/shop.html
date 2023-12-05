@@ -1,0 +1,181 @@
+<!-------------------------------------------------------
+Final Project
+Written by: Jayda Pizzuco 2281161 & Melissa Weller
+*“The responsibility and work of each student shall be described precisely here”
+For the shop page 
+
+Melissa:
+Created the navigation and footer
+Implemented the styling and the gallery that displays all the products 
+Added the zoom function that expands the image when the user's mouse hovers over it 
+Added the view cart buttons
+Created the styling for the page 
+
+Jayda:
+Added the Add To Cart Inputs underneath each Item 
+Implemented the UpdateCart method that gets all the information about the products that are added to cart, saves this information to local storage and opens up the Cart page
+Added the images for the products
+Implemented JSON function that gets the product names
+For “Internet Programming” Section 1(Melissa)  and Section 2(Jayda)– Fall 2023
+-------------------------------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Everything Store Shop</title>
+  <link href="style.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <h2>Our Products</h2>
+    </header>
+ 
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <br><br><input type="button" class="button2" id="updateCartBtn" value="View Cart" onclick="updateCart()" align = "right">
+        <br><br><div id ="gallery">
+            <figure>
+                <img src="item1.jpg" class="zoom" width="300px" height="300px" alt="item1"/>
+                <figcaption class="figcaption1" id = "item1Name" ></figcaption>
+                <figcaption class="figcaption1"> Add To Cart:<input type="number" name="chooseItem1" id="item1Quantity"  value = "0" min="0" max="10" onkeydown="return false"></figcaption>
+                <figcaption class="figcaption2">$23.29</figcaption>
+            </figure>
+            <figure>
+                <img src="item2.jpg" class="zoom" width="200px" height="300px" alt="item2"/>
+                <figcaption class="figcaption1" id = "item2Name"></figcaption>
+                <figcaption class="figcaption1"> Add To Cart:<input type="number" name="chooseItem2" id="item2Quantity"  value = "0" min="0" max="10" onkeydown="return false"></figcaption>
+                <figcaption class="figcaption2">$24.99</figcaption>
+            </figure>
+            <figure>
+                <img src="item3.jpg" class="zoom" width="300px" height="300px" alt="item3"/>
+                <figcaption class="figcaption1" id = "item3Name"></figcaption>
+                <figcaption class="figcaption1"> Add To Cart:<input type="number" name="chooseItem3" id="item3Quantity"  value = "0" min="0" max="10" onkeydown="return false"> </figcaption>
+                <figcaption class="figcaption2">$49.99</figcaption>
+            </figure>
+            <figure>
+                <img src="item4.jpg" class="zoom" width="300px" height="300px" alt="item4"/>
+                <figcaption class="figcaption1" id = "item4Name"></figcaption>
+                <figcaption class="figcaption1"> Add To Cart: <input type="number" name="chooseItem4" id="item4Quantity"  value = "0" min="0" max="10" onkeydown="return false"> </figcaption>
+                <figcaption class="figcaption2">$32.45</figcaption>
+            </figure>
+            <figure>
+                <img src="item5.jpg" class="zoom" width="300px" height="300px" alt="item5"/>
+                <figcaption class="figcaption1" id = "item5Name"></figcaption>
+                <figcaption class="figcaption1">Add To Cart: <input type="number" name="chooseItem5" id="item5Quantity"  value = "0" min="0" max="10" onkeydown="return false"> </figcaption>
+                <figcaption class="figcaption2">$19.99</figcaption>
+            </figure>
+            <figure>
+                <img src="item6.jpg" class="zoom" width="300px" height="300px" alt="item6"/>
+                <figcaption class="figcaption1" id = "item6Name"></figcaption>
+                <figcaption class="figcaption1">Add To Cart: <input type="number" name="chooseItem6" id="item6Quantity"  value = "0" min="0" max="10" onkeydown="return false"> </figcaption>
+                <figcaption class="figcaption2">$15.99</figcaption>
+            </figure>
+            <figure>
+                <img src="item7.jpg" class="zoom" width="250px" height="300px" alt="item7"/>
+                <figcaption class="figcaption1" id = "item7Name"></figcaption>
+                <figcaption class="figcaption1">Add To Cart: <input type="number" name="chooseItem7" id="item7Quantity"  value = "0" min="0" max="10" onkeydown="return false"></figcaption>
+                <figcaption class="figcaption2">$24.99</figcaption>
+            </figure>
+            <figure>
+                <img src="item8.jpg" class="zoom" width="300px" height="300px" alt="item8"/> 
+                <figcaption class="figcaption1" id = "item8Name"></figcaption>
+                <figcaption class="figcaption1">Add To cart: <input type="number" name="chooseItem8" id="item8Quantity"  value = "0" min="0" max="10" onkeydown="return false"></figcaption>
+                <figcaption class="figcaption2">$36.99</figcaption>
+            </figure>
+            <figure>
+                <img src="item9.jpg" class="zoom" width="300px" height="300px" alt="item9"/>
+                <figcaption class="figcaption1" id = "item9Name"></figcaption>
+                <figcaption class="figcaption1">Add To Cart: <input type="number" name="chooseItem9" id="item9Quantity"  value = "0" min="0" max="10" onkeydown="return false"> </figcaption>
+                <figcaption class="figcaption2">$18.99</figcaption>
+            </figure>
+            <figure>
+                <img src="item10.jpg" class="zoom" width="250px" height="300px" alt="item10"/> 
+                <figcaption class="figcaption1"id = "item10Name"></figcaption>
+                <figcaption class="figcaption1">Add To Cart: <input type="number" name="chooseItem10" id="item10Quantity"  value = "0" min="0" max="10" onkeydown="return false"></figcaption>
+                <figcaption class="figcaption2">$21.99</figcaption>
+                <br><br>
+            </figure>
+        </div><br><br>
+        <input type="button" class="button2" id="updateCartBtn" value="View Cart" onclick="updateCart()" align = "right"><br><br>  
+    </main>
+
+<script>
+        // using JSON to get the names of the products from HTTP server 
+        const request = new XMLHttpRequest();
+        request.open('GET', 'productNameArray.json');
+        request.onload = function() {
+        if(request.status>=200 && request.status<400 ){
+        const productNameArr = JSON.parse(request.responseText); 
+        document.getElementById('item1Name').innerHTML = productNameArr[0];
+        document.getElementById('item2Name').innerHTML = productNameArr[1];
+        document.getElementById('item3Name').innerHTML = productNameArr[2];
+        document.getElementById('item4Name').innerHTML = productNameArr[3];
+        document.getElementById('item5Name').innerHTML = productNameArr[4];
+        document.getElementById('item6Name').innerHTML = productNameArr[5];
+        document.getElementById('item7Name').innerHTML = productNameArr[6];
+        document.getElementById('item8Name').innerHTML = productNameArr[7];
+        document.getElementById('item9Name').innerHTML = productNameArr[8];
+        document.getElementById('item10Name').innerHTML = productNameArr[9];
+
+
+         //save the item names to local storage so we can use them on the cart page
+         localStorage.setItem('item1Name',productNameArr[0]);
+         localStorage.setItem('item2Name',productNameArr[1]);
+         localStorage.setItem('item3Name',productNameArr[2]);
+         localStorage.setItem('item4Name',productNameArr[3]);
+         localStorage.setItem('item5Name',productNameArr[4]);
+         localStorage.setItem('item6Name',productNameArr[5]);
+         localStorage.setItem('item7Name',productNameArr[6]);
+         localStorage.setItem('item8Name',productNameArr[7]);
+         localStorage.setItem('item9Name',productNameArr[8]);
+         localStorage.setItem('item10Name',productNameArr[9]);
+        }
+        }
+         request.send();
+
+        
+
+function updateCart(){
+
+   const item1Quantity = document.getElementById("item1Quantity").value;
+   const item2Quantity = document.getElementById("item2Quantity").value;
+   const item3Quantity = document.getElementById("item3Quantity").value;
+   const item4Quantity = document.getElementById("item4Quantity").value;
+   const item5Quantity = document.getElementById("item5Quantity").value;
+   const item6Quantity = document.getElementById("item6Quantity").value;
+   const item7Quantity = document.getElementById("item7Quantity").value;
+   const item8Quantity = document.getElementById("item8Quantity").value;
+   const item9Quantity = document.getElementById("item9Quantity").value;
+   const item10Quantity = document.getElementById("item10Quantity").value;
+
+   
+    localStorage.setItem('item1Quantity',item1Quantity);
+    localStorage.setItem('item2Quantity',item2Quantity);
+    localStorage.setItem('item3Quantity',item3Quantity);
+    localStorage.setItem('item4Quantity',item4Quantity);
+    localStorage.setItem('item5Quantity',item5Quantity);
+    localStorage.setItem('item6Quantity',item6Quantity);
+    localStorage.setItem('item7Quantity',item7Quantity);
+    localStorage.setItem('item8Quantity',item8Quantity);
+    localStorage.setItem('item9Quantity',item9Quantity);
+    localStorage.setItem('item10Quantity',item10Quantity);
+
+    window.location.href = "cart.html";
+}
+    </script>
+    
+    <footer>
+        Copyright &copy; 2023 Everything Store<br>
+    </footer>
+</body>
+</html>
